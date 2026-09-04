@@ -53,8 +53,8 @@ export const FOUNDER = {
   role: 'Kurucu & Koordinatör',
   lead: 'Sahadan gelen deneyimi, modern futsal eğitimiyle geleceğin oyuncularına aktarıyoruz.',
   paragraphs: [
-    "24 Mayıs 1985 Trabzon doğumlu Cemre Atmaca, futbol kariyerine Telekomspor'da başladı. 2002 yılında Trabzonspor'da profesyonelliğe adım attı ve A takım seviyesine yükseldi.",
-    'Kariyeri boyunca Giresunspor, Adanaspor, Balıkesirspor, Kartalspor, Orduspor, Sarıyerspor ve Gebzespor gibi kulüplerde forma giydi. U18 Türk Milli Takımı seviyesinde de görev aldı.',
+    "24 Mayıs 1985 Trabzon doğumlu Cemre Atmaca, futbol kariyerine Telekomspor'da başladı. U18 Türk Milli Takımı seviyesinde de görev aldı. 2002 yılında Trabzonspor'da profesyonelliğe adım attı ve A takım seviyesine yükseldi.",
+    'Kariyeri boyunca başta Trabzonspor olmak üzere Sarıyer, Giresunspor, Adanaspor, Balıkesirspor, Kartalspor, Orduspor ve Gebzespor gibi kulüplerde forma giydi.',
     'Bugün futbolculuk deneyimini CA Futsal Akademi çatısı altında genç sporcuların teknik, fiziksel ve zihinsel gelişimine aktarıyor.',
   ],
   stats: [

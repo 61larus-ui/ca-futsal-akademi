@@ -1,7 +1,9 @@
 .hero {
   position: relative;
   isolation: isolate;
+  contain: paint;
   overflow: hidden;
+  overflow-x: clip;
   display: flex;
   flex-direction: column;
   color: var(--color-white);
@@ -28,9 +30,10 @@
 .hero__eagle-watermark {
   position: absolute;
   top: 6%;
-  right: -8%;
+  right: 0;
   z-index: 0;
-  width: clamp(280px, 62vw, 520px);
+  width: clamp(200px, 62vw, 520px);
+  max-width: 100%;
   height: auto;
   object-fit: contain;
   object-position: right center;
@@ -162,6 +165,7 @@
     top: 8%;
     right: -10%;
     width: clamp(420px, 52vw, 720px);
+    max-width: none;
     opacity: 0.085;
   }
 

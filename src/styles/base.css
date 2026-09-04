@@ -8,7 +8,16 @@ body {
   line-height: 1.6;
   color: var(--color-text);
   background: var(--color-offwhite);
+  min-width: 0;
+  max-width: 100%;
   min-height: 100svh;
+  overflow-x: clip;
+}
+
+@supports not (overflow-x: clip) {
+  body {
+    overflow-x: hidden;
+  }
 }
 
 body.is-nav-open,
@@ -17,9 +26,19 @@ body.is-modal-open {
 }
 
 #root {
-  min-height: 100svh;
   display: flex;
   flex-direction: column;
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
+  min-height: 100svh;
+  overflow-x: clip;
+}
+
+@supports not (overflow-x: clip) {
+  #root {
+    overflow-x: hidden;
+  }
 }
 
 h1,

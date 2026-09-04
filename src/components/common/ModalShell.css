@@ -19,8 +19,8 @@
 .site-modal {
   display: flex;
   flex-direction: column;
-  width: 100%;
-  max-width: 980px;
+  width: min(980px, 100%);
+  max-width: 100%;
   max-height: 92vh;
   max-height: 92dvh;
   min-width: 0;
