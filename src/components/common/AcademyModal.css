@@ -1,0 +1,57 @@
+.academy-modal__intro {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.academy-modal__section {
+  margin-top: 32px;
+}
+
+.academy-modal__section p + p {
+  margin-top: 14px;
+}
+
+.academy-modal__section-title {
+  margin: 0 0 12px;
+  color: var(--color-navy);
+  font-size: 1.18rem;
+  font-weight: 700;
+  line-height: 1.28;
+  letter-spacing: -0.015em;
+}
+
+.academy-modal__manifesto {
+  margin: 32px 0 0;
+  padding: 18px 18px 18px 20px;
+  max-width: 72ch;
+  background: color-mix(in srgb, var(--color-navy) 5.5%, var(--color-offwhite));
+  border-left: 3px solid var(--color-gold);
+  color: var(--color-navy);
+  font-family: var(--font-heading);
+  font-size: clamp(1.02rem, 0.94rem + 0.55vw, 1.22rem);
+  font-weight: 700;
+  line-height: 1.38;
+}
+
+.academy-modal__manifesto-line {
+  display: block;
+}
+
+.academy-modal__closing {
+  margin-top: 20px;
+}
+
+@media (min-width: 768px) {
+  .academy-modal__section {
+    margin-top: 34px;
+  }
+
+  .academy-modal__section-title {
+    font-size: 1.22rem;
+  }
+
+  .academy-modal__manifesto {
+    padding: 22px 24px 22px 26px;
+  }
+}

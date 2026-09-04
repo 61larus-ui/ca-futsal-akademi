@@ -1,0 +1,30 @@
+.site-logo {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  min-width: 0;
+  line-height: 0;
+}
+
+.site-logo__image {
+  display: block;
+  width: auto;
+  height: 48px;
+  max-width: min(148px, 42vw);
+  object-fit: contain;
+  object-position: left center;
+}
+
+@media (min-width: 768px) {
+  .site-logo__image {
+    height: 56px;
+    max-width: 168px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .site-logo__image {
+    height: 62px;
+    max-width: 176px;
+  }
+}

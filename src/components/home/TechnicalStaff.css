@@ -1,0 +1,197 @@
+.technical-staff {
+  background:
+    radial-gradient(
+      ellipse 72% 58% at 50% 46%,
+      color-mix(in srgb, var(--color-navy) 2.6%, transparent),
+      transparent 72%
+    ),
+    var(--color-offwhite);
+  padding-block: 40px;
+}
+
+.technical-staff__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.staff-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--color-navy) 18%, transparent);
+  border-radius: 8px;
+  background: var(--color-navy-dark);
+  color: var(--color-white);
+  box-shadow: 0 6px 16px rgba(6, 22, 46, 0.08);
+  text-decoration: none;
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.staff-card__media {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  flex-shrink: 0;
+  aspect-ratio: 4 / 5;
+  background:
+    radial-gradient(
+      ellipse 70% 40% at 50% 100%,
+      color-mix(in srgb, var(--color-gold) 10%, transparent),
+      transparent 55%
+    ),
+    linear-gradient(168deg, var(--color-navy) 0%, var(--color-navy-dark) 100%);
+}
+
+.staff-card__image-stage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.staff-card__photo {
+  position: absolute;
+  left: 50%;
+  bottom: var(--staff-photo-bottom, 0);
+  display: block;
+  width: auto;
+  height: var(--staff-photo-height, 100%);
+  max-width: none;
+  object-fit: contain;
+  object-position: center bottom;
+  transform: translateX(-50%);
+  transform-origin: center bottom;
+  transition: transform 0.35s ease;
+}
+
+.staff-card--cemre-atmaca {
+  --staff-photo-height: 100%;
+  --staff-photo-bottom: 0;
+}
+
+.staff-card--cemre-atmaca .staff-card__photo {
+  top: 15%;
+  bottom: auto;
+}
+
+.staff-card--sebahattin-akbayrak {
+  --staff-photo-height: 92%;
+  --staff-photo-bottom: 0;
+}
+
+.staff-card__logo {
+  position: absolute;
+  top: 46%;
+  left: 50%;
+  display: block;
+  width: 40%;
+  height: auto;
+  max-height: 38%;
+  object-fit: contain;
+  object-position: center;
+  transform: translate(-50%, -50%);
+}
+
+.staff-card__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex: 1 1 auto;
+  gap: 6px;
+  min-height: 5.6rem;
+  padding: 14px 14px 16px;
+  border-top: 1px solid color-mix(in srgb, var(--color-gold) 18%, transparent);
+  background: var(--color-navy-dark);
+}
+
+.staff-card__name {
+  color: var(--color-white);
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  overflow-wrap: break-word;
+}
+
+.staff-card__role {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 0.78rem;
+  font-weight: 500;
+  line-height: 1.35;
+  overflow-wrap: break-word;
+}
+
+.staff-card__role-line {
+  display: block;
+}
+
+.staff-card:hover {
+  border-color: color-mix(in srgb, var(--color-gold) 42%, transparent);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(6, 22, 46, 0.12);
+}
+
+.staff-card:hover .staff-card__photo {
+  transform: translateX(-50%) scale(1.02);
+}
+
+.staff-card:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 3px;
+}
+
+@media (min-width: 768px) {
+  .technical-staff {
+    padding-block: 48px;
+  }
+
+  .technical-staff__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .technical-staff {
+    padding-block: 56px;
+  }
+
+  .technical-staff__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .technical-staff__grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .staff-card,
+  .staff-card__photo {
+    transition: none;
+  }
+
+  .staff-card:hover {
+    transform: none;
+  }
+
+  .staff-card:hover .staff-card__photo {
+    transform: translateX(-50%);
+  }
+}

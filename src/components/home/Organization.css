@@ -1,0 +1,331 @@
+.organization {
+  --org-line: color-mix(in srgb, var(--color-gold) 46%, transparent);
+  --org-line-w: 1.5px;
+  --org-stem: 16px;
+  --org-gap: 12px;
+  --org-role-gap: 6px;
+  --org-radius: 8px;
+  --org-tree-max: 100%;
+  --org-lead-width: 100%;
+  --org-unit-min-h: 60px;
+  --org-role-min-h: 36px;
+
+  position: relative;
+  background:
+    radial-gradient(
+      ellipse 64% 52% at 50% 40%,
+      color-mix(in srgb, var(--color-navy) 2.4%, transparent),
+      transparent 70%
+    ),
+    var(--color-offwhite);
+  padding-block: 36px;
+  scroll-margin-top: calc(var(--header-height) + 12px);
+}
+
+.organization__tree {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  max-width: var(--org-tree-max);
+  margin-inline: auto;
+}
+
+.organization__lead {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  padding-bottom: var(--org-stem);
+}
+
+.organization__lead::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: var(--org-line-w);
+  height: var(--org-stem);
+  transform: translateX(-50%);
+  background: var(--org-line);
+}
+
+.organization__card {
+  box-sizing: border-box;
+  border-radius: var(--org-radius);
+  text-align: center;
+}
+
+.organization__card--lead {
+  width: var(--org-lead-width);
+  padding: 16px 24px 18px;
+  border: 1px solid color-mix(in srgb, var(--color-gold) 42%, transparent);
+  background: var(--color-navy);
+  box-shadow: 0 4px 10px rgba(6, 22, 46, 0.06);
+}
+
+.organization__card-label {
+  margin: 0 0 5px;
+  color: var(--color-gold);
+  font-family: var(--font-heading);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+.organization__card-name {
+  margin: 0;
+  color: var(--color-white);
+  font-family: var(--font-heading);
+  font-size: 1.12rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+.organization__card-name--unit {
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  line-height: 1.25;
+}
+
+.organization__units {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--org-gap);
+  align-items: start;
+  width: 100%;
+}
+
+.organization__unit {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  min-width: 0;
+}
+
+.organization__unit:not(:first-child)::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: calc(var(--org-gap) * -1);
+  width: var(--org-line-w);
+  height: var(--org-gap);
+  transform: translateX(-50%);
+  background: var(--org-line);
+}
+
+.organization__card--unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: var(--org-unit-min-h);
+  padding: 10px 12px;
+  border: 1px solid color-mix(in srgb, var(--color-navy) 16%, transparent);
+  border-top: 1px solid color-mix(in srgb, var(--color-gold) 34%, transparent);
+  background: var(--color-navy);
+  box-shadow: 0 3px 8px rgba(6, 22, 46, 0.05);
+}
+
+.organization__card--named .organization__card-label {
+  margin-bottom: 4px;
+}
+
+.organization__card-heading {
+  margin: 0;
+  color: var(--color-white);
+  font-family: var(--font-heading);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  line-height: 1.3;
+}
+
+.organization__roles {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--org-role-gap);
+  margin: 0;
+  margin-top: var(--org-stem);
+  padding: 0;
+  list-style: none;
+}
+
+.organization__roles::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: calc(var(--org-stem) * -1);
+  width: var(--org-line-w);
+  height: var(--org-stem);
+  transform: translateX(-50%);
+  background: var(--org-line);
+}
+
+.organization__card--role {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: var(--org-role-min-h);
+  padding: 6px 10px;
+  border: 1px solid color-mix(in srgb, var(--color-navy) 14%, transparent);
+  border-left: 1px solid color-mix(in srgb, var(--color-gold) 55%, transparent);
+  background: var(--color-navy-dark);
+  color: color-mix(in srgb, var(--color-white) 92%, transparent);
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  line-height: 1.25;
+}
+
+.organization__card--role:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  width: var(--org-line-w);
+  height: var(--org-role-gap);
+  transform: translateX(-50%);
+  background: var(--org-line);
+}
+
+@media (min-width: 768px) {
+  .organization {
+    --org-stem: 18px;
+    --org-gap: 14px;
+    --org-lead-width: 320px;
+    --org-unit-min-h: 62px;
+    padding-block: 44px;
+  }
+
+  .organization__units {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    padding-top: var(--org-stem);
+  }
+
+  .organization__units::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: calc((100% - (var(--org-gap) * 2)) / 6);
+    right: calc((100% - (var(--org-gap) * 2)) / 6);
+    height: var(--org-line-w);
+    background: var(--org-line);
+  }
+
+  .organization__unit::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: calc(var(--org-stem) * -1);
+    width: var(--org-line-w);
+    height: var(--org-stem);
+    transform: translateX(-50%);
+    background: var(--org-line);
+  }
+
+  .organization__unit:not(:first-child)::before {
+    top: calc(var(--org-stem) * -1);
+    height: var(--org-stem);
+  }
+
+  .organization__card--lead {
+    padding: 18px 26px 20px;
+  }
+
+  .organization__card-name {
+    font-size: 1.16rem;
+  }
+
+  .organization__card--unit {
+    padding: 12px 10px;
+  }
+
+  .organization__card-heading {
+    font-size: 0.72rem;
+  }
+
+  .organization__card-name--unit {
+    font-size: 0.84rem;
+  }
+
+  .organization__card--role {
+    min-height: 38px;
+    font-size: 0.7rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .organization {
+    --org-gap: 16px;
+    --org-lead-width: 340px;
+    --org-unit-min-h: 64px;
+    --org-tree-max: 1080px;
+    padding-block: 52px;
+  }
+
+  .organization__card--lead {
+    padding: 18px 28px 20px;
+  }
+
+  .organization__card-label {
+    font-size: 0.64rem;
+  }
+
+  .organization__card-name {
+    font-size: 1.2rem;
+  }
+
+  .organization__card--unit {
+    padding: 12px 14px;
+  }
+
+  .organization__card-heading {
+    font-size: 0.76rem;
+    letter-spacing: 0.12em;
+  }
+
+  .organization__card-name--unit {
+    font-size: 0.9rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .organization {
+    --org-lead-width: 396px;
+    --org-tree-max: 1080px;
+    padding-block: 56px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .organization {
+    padding-block: 68px;
+  }
+}
+
+@media (max-width: 767px) {
+  .organization__units {
+    padding-top: 0;
+  }
+
+  .organization__card-name {
+    font-size: 1.08rem;
+  }
+
+  .organization__card-heading {
+    font-size: 0.74rem;
+  }
+}

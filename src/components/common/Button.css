@@ -1,0 +1,73 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 48px;
+  padding: 0.7rem 1.3rem;
+  border-radius: var(--radius-btn);
+  border: 1px solid transparent;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.8125rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.btn svg {
+  flex-shrink: 0;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn--gold {
+  background: var(--color-gold);
+  color: var(--color-navy);
+}
+
+.btn--gold:hover {
+  background: color-mix(in srgb, var(--color-gold) 86%, var(--color-white));
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--color-white);
+  border-color: var(--color-white);
+}
+
+.btn--ghost:hover {
+  background: var(--color-white-08);
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+}
+
+.btn--block {
+  width: 100%;
+}
+
+.btn--text {
+  min-height: 44px;
+  padding-inline: 0;
+  background: transparent;
+  color: var(--color-navy);
+  border-color: transparent;
+}
+
+.btn--text:hover {
+  color: var(--color-gold);
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn:hover {
+    transform: none;
+  }
+}

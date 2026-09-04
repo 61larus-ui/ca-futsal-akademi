@@ -1,0 +1,200 @@
+.programs-modal__slogan {
+  margin: 10px 0 0;
+  max-width: 42ch;
+  color: color-mix(in srgb, var(--color-navy) 72%, #4b5565);
+  font-size: 0.92rem;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.programs-modal__cards {
+  display: grid;
+  gap: 14px;
+}
+
+.programs-modal__card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  min-width: 0;
+  padding: 22px 20px 20px;
+  text-align: start;
+  color: var(--color-white);
+  background: var(--color-navy);
+  border: 1px solid color-mix(in srgb, var(--color-gold) 26%, transparent);
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(6, 22, 46, 0.12);
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.programs-modal__card::before {
+  content: '';
+  display: block;
+  width: 36px;
+  height: 1px;
+  background: var(--color-gold);
+}
+
+.programs-modal__card-kicker {
+  color: var(--color-white);
+  font-family: var(--font-heading);
+  font-size: 1.12rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  line-height: 1.15;
+}
+
+.programs-modal__card-age {
+  color: rgba(255, 255, 255, 0.62);
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.programs-modal__card-slogan {
+  margin-top: 6px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.programs-modal__card:hover,
+.programs-modal__card:focus-visible {
+  transform: translateY(-2px);
+  border-color: color-mix(in srgb, var(--color-gold) 58%, transparent);
+  box-shadow: 0 14px 28px rgba(6, 22, 46, 0.2);
+}
+
+.programs-modal__card:hover::before,
+.programs-modal__card:focus-visible::before {
+  width: 48px;
+}
+
+.programs-modal__detail {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.programs-modal__lead-copy {
+  color: var(--color-navy);
+  font-size: 1.02rem;
+  font-weight: 600;
+  line-height: 1.7;
+}
+
+.programs-modal__topics {
+  margin-top: 18px;
+}
+
+.programs-modal__topics-title {
+  margin: 0 0 14px;
+  color: var(--color-navy);
+  font-size: 1.12rem;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+}
+
+.programs-modal__list {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  max-width: 72ch;
+}
+
+.programs-modal__list li {
+  position: relative;
+  padding-left: 16px;
+  color: color-mix(in srgb, var(--color-navy) 86%, #3f4c5f);
+  line-height: 1.55;
+}
+
+.programs-modal__list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 6px;
+  height: 1px;
+  background: var(--color-gold);
+}
+
+.programs-modal__manifesto {
+  margin: 18px 0 0;
+  padding: 18px 18px 18px 20px;
+  max-width: 72ch;
+  background: color-mix(in srgb, var(--color-navy) 5.5%, var(--color-offwhite));
+  border-left: 3px solid var(--color-gold);
+  color: var(--color-navy);
+  font-family: var(--font-heading);
+  font-size: clamp(1.02rem, 0.94rem + 0.45vw, 1.18rem);
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.programs-modal__brand {
+  margin: 28px auto 0;
+  max-width: 36ch;
+  color: var(--color-navy);
+  font-family: var(--font-heading);
+  font-size: 0.92rem;
+  font-weight: 700;
+  line-height: 1.45;
+  text-align: center;
+}
+
+.programs-modal__brand::before {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 1px;
+  margin: 0 auto 12px;
+  background: var(--color-gold);
+}
+
+@media (min-width: 768px) {
+  .programs-modal__cards {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .programs-modal__card {
+    padding: 26px 24px 24px;
+    min-height: 198px;
+  }
+
+  .programs-modal__list {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 28px;
+    row-gap: 12px;
+  }
+
+  .programs-modal__topics-title {
+    font-size: 1.18rem;
+  }
+
+  .programs-modal__manifesto {
+    padding: 22px 24px 22px 26px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .programs-modal__card {
+    transition: none;
+  }
+
+  .programs-modal__card:hover,
+  .programs-modal__card:focus-visible {
+    transform: none;
+  }
+}

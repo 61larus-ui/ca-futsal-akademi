@@ -1,0 +1,111 @@
+.why-futsal-modal__intro {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.why-futsal-modal__intro p,
+.why-futsal-modal__section p {
+  max-width: 76ch;
+}
+
+.why-futsal-modal__section {
+  margin-top: 30px;
+}
+
+.why-futsal-modal__section p + p {
+  margin-top: 14px;
+}
+
+.why-futsal-modal__section-title {
+  margin: 0 0 12px;
+  color: var(--color-navy);
+  font-size: 1.18rem;
+  font-weight: 700;
+  line-height: 1.28;
+  letter-spacing: -0.015em;
+  overflow-wrap: break-word;
+}
+
+.why-futsal-modal__section-title-line {
+  display: block;
+}
+
+.why-futsal-modal__highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 18px 0;
+  padding: 0;
+  list-style: none;
+  max-width: 76ch;
+}
+
+.why-futsal-modal__highlights li {
+  position: relative;
+  padding-left: 18px;
+  color: var(--color-navy);
+  font-size: 0.98rem;
+  font-weight: 600;
+  line-height: 1.55;
+  overflow-wrap: break-word;
+}
+
+.why-futsal-modal__highlights li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.7em;
+  width: 8px;
+  height: 1.5px;
+  background: var(--color-gold);
+}
+
+.why-futsal-modal__manifesto {
+  margin: 24px 0 0;
+  padding: 18px 18px 18px 20px;
+  max-width: 76ch;
+  min-width: 0;
+  background: color-mix(in srgb, var(--color-navy) 5.5%, var(--color-offwhite));
+  border-left: 3px solid var(--color-gold);
+  color: var(--color-navy);
+  overflow-wrap: break-word;
+}
+
+.why-futsal-modal__manifesto-heading {
+  margin: 0 0 12px;
+  max-width: none;
+  color: var(--color-navy);
+  font-family: var(--font-heading);
+  font-size: clamp(1.02rem, 0.94rem + 0.55vw, 1.22rem);
+  font-weight: 800;
+  line-height: 1.32;
+  letter-spacing: -0.015em;
+}
+
+.why-futsal-modal__manifesto-line {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: clamp(1.02rem, 0.94rem + 0.55vw, 1.22rem);
+  font-weight: 700;
+  line-height: 1.38;
+}
+
+@media (min-width: 768px) {
+  .why-futsal-modal__section {
+    margin-top: 34px;
+  }
+
+  .why-futsal-modal__section-title {
+    font-size: 1.24rem;
+  }
+
+  .why-futsal-modal__highlights {
+    gap: 14px;
+    margin: 20px 0;
+  }
+
+  .why-futsal-modal__manifesto {
+    padding: 22px 24px 22px 26px;
+  }
+}

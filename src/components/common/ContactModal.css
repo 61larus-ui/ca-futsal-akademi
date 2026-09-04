@@ -1,0 +1,85 @@
+.contact-modal__grid {
+  display: grid;
+  gap: 28px;
+}
+
+.contact-modal__stack {
+  display: grid;
+  gap: 22px;
+}
+
+.contact-modal__block {
+  min-width: 0;
+}
+
+.contact-modal__label {
+  margin: 0 0 8px;
+  color: var(--color-gold);
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+.contact-modal__value {
+  margin: 0;
+  color: var(--color-navy);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.contact-modal__meta {
+  margin: 4px 0 0;
+  max-width: none;
+  color: color-mix(in srgb, var(--color-navy) 78%, #4b5565);
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+
+.contact-modal__link {
+  display: inline;
+  color: var(--color-navy);
+  transition: color 0.18s ease;
+}
+
+.contact-modal__link:hover,
+.contact-modal__link:focus-visible {
+  color: var(--color-gold);
+}
+
+.contact-modal__actions {
+  margin-top: 32px;
+}
+
+.contact-modal__note {
+  margin-top: 28px;
+  padding-top: 22px;
+  border-top: 1px solid color-mix(in srgb, var(--color-navy) 10%, transparent);
+}
+
+.contact-modal__note p {
+  margin: 0 0 10px;
+  max-width: 46ch;
+  color: color-mix(in srgb, var(--color-navy) 78%, #4b5565);
+  font-size: 0.94rem;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+@media (min-width: 768px) {
+  .contact-modal__grid {
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+    gap: 40px 48px;
+    align-items: start;
+  }
+
+  .contact-modal__actions {
+    margin-top: 36px;
+  }
+}
