@@ -2,19 +2,31 @@
   position: sticky;
   top: 0;
   z-index: var(--z-header);
+  overflow: visible;
   color: var(--color-white);
+  border-bottom: none;
+}
+
+.site-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 0;
+  height: var(--header-height);
+  pointer-events: none;
   background: color-mix(in srgb, var(--color-navy-dark) 46%, transparent);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-bottom: none;
   box-shadow: 0 1px 0 color-mix(in srgb, var(--color-gold) 14%, transparent);
   transition:
     background-color 0.22s ease,
     box-shadow 0.22s ease;
 }
 
-.site-header--scrolled,
-.site-header--open {
+.site-header--scrolled::before,
+.site-header--open::before {
   background: color-mix(in srgb, var(--color-navy-dark) 94%, transparent);
   box-shadow:
     0 1px 0 color-mix(in srgb, var(--color-gold) 22%, transparent),
@@ -22,6 +34,8 @@
 }
 
 .site-header__bar {
+  position: relative;
+  z-index: 2;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -117,14 +131,23 @@
 }
 
 .site-header__drawer {
-  position: fixed;
-  top: var(--header-height);
+  position: absolute;
+  top: 100%;
   right: 0;
-  bottom: 0;
   left: 0;
-  z-index: var(--z-header);
+  z-index: 1;
+  width: 100%;
+  height: calc(100vh - var(--header-height));
+  height: calc(100svh - var(--header-height));
+  height: calc(100dvh - var(--header-height));
+  max-height: calc(100vh - var(--header-height));
+  max-height: calc(100svh - var(--header-height));
+  max-height: calc(100dvh - var(--header-height));
   background: var(--color-navy-dark);
+  overflow-x: hidden;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
 }
 
 .site-header__drawer[hidden] {
@@ -134,13 +157,20 @@
 .site-header__drawer-inner {
   display: flex;
   flex-direction: column;
-  min-height: calc(100svh - var(--header-height));
-  padding-block: 8px 28px;
+  gap: 12px;
+  min-height: 100%;
+  min-width: 0;
+  padding-block: 8px max(28px, env(safe-area-inset-bottom, 0px));
 }
 
 .nav-list--mobile {
   flex-direction: column;
   gap: 0;
+  min-width: 0;
+}
+
+.nav-list--mobile > li {
+  min-width: 0;
 }
 
 .site-header .nav-list--mobile .nav-list__link {
