@@ -79,7 +79,7 @@ export default function Footer() {
       <Container>
         <div className="site-footer__grid">
           <div className="site-footer__brand">
-            <Logo />
+            <Logo variant="header" />
             <p className="site-footer__intro">{FOOTER_CONTENT.intro}</p>
             <a
               className="site-footer__social"

@@ -19,7 +19,7 @@
 
   --max-content-width: 1440px;
   --container-padding: 20px;
-  --header-height: 72px;
+  --header-height: 80px;
 
   --space-section: 40px;
   --radius-sm: 4px;
@@ -50,7 +50,7 @@
 @media (min-width: 768px) {
   :root {
     --container-padding: 28px;
-    --header-height: 76px;
+    --header-height: 86px;
     --space-section: 56px;
   }
 }
@@ -58,7 +58,7 @@
 @media (min-width: 1024px) {
   :root {
     --container-padding: 48px;
-    --header-height: 74px;
+    --header-height: 88px;
     --space-section: 72px;
   }
 }

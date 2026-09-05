@@ -7,6 +7,7 @@
   max-width: 100%;
   color: var(--color-white);
   border-bottom: none;
+  --header-logo-ground: #031831;
 }
 
 .site-header::before {
@@ -18,7 +19,7 @@
   z-index: 0;
   height: var(--header-height);
   pointer-events: none;
-  background: color-mix(in srgb, var(--color-navy-dark) 46%, transparent);
+  background: var(--header-logo-ground);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   box-shadow: 0 1px 0 color-mix(in srgb, var(--color-gold) 14%, transparent);
@@ -29,7 +30,7 @@
 
 .site-header--scrolled::before,
 .site-header--open::before {
-  background: color-mix(in srgb, var(--color-navy-dark) 94%, transparent);
+  background: var(--header-logo-ground);
   box-shadow:
     0 1px 0 color-mix(in srgb, var(--color-gold) 22%, transparent),
     0 4px 14px rgba(6, 22, 46, 0.16);
@@ -40,10 +41,16 @@
   z-index: 2;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
   min-height: var(--header-height);
   height: var(--header-height);
   gap: 16px;
+}
+
+.site-header .site-logo {
+  min-width: 0;
+  max-width: calc(100% - 60px);
+  background: var(--header-logo-ground);
 }
 
 .site-header__nav {
@@ -65,6 +72,7 @@
 
 .site-header__toggle {
   display: inline-flex;
+  flex-shrink: 0;
   align-items: center;
   justify-content: center;
   width: 44px;
@@ -210,6 +218,12 @@
     gap: 16px;
   }
 
+  .site-header .site-logo {
+    grid-column: 1;
+    justify-self: start;
+    max-width: min(212px, 100%);
+  }
+
   .site-header__nav {
     display: block;
     min-width: 0;
@@ -246,5 +260,9 @@
 
   .site-header .nav-list__link {
     font-size: 0.875rem;
+  }
+
+  .site-header .site-logo {
+    max-width: min(220px, 100%);
   }
 }

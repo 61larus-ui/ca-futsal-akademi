@@ -1,5 +1,6 @@
 import logoDark from '../assets/images/ca-futsal-logo-dark.png'
 import logoLight from '../assets/images/ca-futsal-logo-light.png'
+import logoHeader from '../assets/images/ca-futsal-logo-dark.png.PNG'
 import founder from '../assets/images/cemre-atmaca.png'
 import eagleDark from '../assets/images/eagle-dark.png'
 import heroPlayersBlack from '../assets/images/hero-players-black.png.png'
@@ -11,6 +12,7 @@ import schoolLogo from '../assets/images/sinav-koleji-logo.png'
 export const IMAGES = {
   logoDark,
   logoLight,
+  logoHeader,
   founder,
   eagleDark,
   heroPlayersBlack,

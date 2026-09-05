@@ -3,7 +3,12 @@ import { IMAGES } from '../../data/images'
 import './Logo.css'
 
 export default function Logo({ variant = 'on-dark' }) {
-  const src = variant === 'on-light' ? IMAGES.logoDark : IMAGES.logoLight
+  const isHeader = variant === 'header'
+  const src = isHeader
+    ? IMAGES.logoHeader
+    : variant === 'on-light'
+      ? IMAGES.logoDark
+      : IMAGES.logoLight
 
   return (
     <Link
@@ -14,9 +19,9 @@ export default function Logo({ variant = 'on-dark' }) {
       <img
         className="site-logo__image"
         src={src}
-        alt=""
-        width="160"
-        height="192"
+        alt={isHeader ? 'CA Futsal Akademi' : ''}
+        width={isHeader ? '2039' : '160'}
+        height={isHeader ? '771' : '192'}
       />
     </Link>
   )

@@ -4,6 +4,7 @@ import { CTA_LINK, NAV_LINKS } from '../../data/navigation'
 import { useModals } from '../../context/useModals'
 import Button from '../common/Button'
 import Container from '../common/Container'
+import Logo from '../common/Logo'
 import NavList from '../common/NavList'
 import './Header.css'
 
@@ -141,6 +142,8 @@ export default function Header() {
   return (
     <header className={headerClass}>
       <Container className="site-header__bar">
+        <Logo variant="header" />
+
         <nav className="site-header__nav" aria-label="Ana menü">
           <NavList
             items={navItems}

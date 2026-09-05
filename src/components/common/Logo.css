@@ -28,3 +28,28 @@
     max-width: 176px;
   }
 }
+
+.site-logo--header {
+  flex: 0 1 auto;
+}
+
+.site-logo--header .site-logo__image {
+  height: 73px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: center;
+  overflow: visible;
+}
+
+@media (min-width: 768px) {
+  .site-logo--header .site-logo__image {
+    height: 78px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .site-logo--header .site-logo__image {
+    height: 80px;
+  }
+}
